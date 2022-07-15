@@ -1,0 +1,78 @@
+.container{
+	max-width: 768px;
+}
+.submit-btn{
+	background-color: #FE2E00;
+	color: white;
+	font-weight: bold;
+}
+.body{
+	background-color: #004AAD;
+}
+.logo{
+    width: 250px;
+    margin: 0 auto;
+}
+.logo img{
+	width: 100%;
+}
+.form-content {
+    margin: 40px 0;
+}
+.form-content form {
+    margin-top: 7rem;
+}
+.qrcode-content{
+	margin: 0 auto;
+}
+.show-order-detail{
+    max-width: 250px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px -1px 2px 2px rgb(167 167 167 / 60%);
+    padding: 25px;
+}
+.btn-container{
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+.ordered-user-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ordered-user-detail span, .ordered-user-detail h5 {
+    width: 50%;
+}
+.ordered-user-detail h5{
+    margin-left: auto;
+    display: block;
+    text-align: right;
+}
+.ordered-user-detail span {
+    font-weight: bold;
+}
+.user-order{
+    padding-left: 0;
+    margin-top: 70px;
+}
+.user-order li {
+    margin-left: 15px;
+    font-weight: bold;
+}
+.user-order li .d-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.user-order-detail input#ordername {
+    width: 21px;
+}
+input[type="checkbox"] {
+    background-color: #FF2E00;
+}
+.showvideo{
+    display: block!important;
+    margin: 0 auto;
+}

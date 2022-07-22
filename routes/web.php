@@ -28,11 +28,18 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::any('/admin-login',[App\Http\Controllers\AdminController::class, 'index'])->name('adminlogin');
 
-Route::any('/qrcode-scanner',[App\Http\Controllers\QrcodeController::class, 'qrcodscannereview'])->name('qrcodescanner');
+/* Host Admin Middleware Route */
 
-Route::get('/generate-qrcode/{OrderId}/{UserId}',[App\Http\Controllers\QrcodeController::class,'qrcode']);
+Route::group(['middleware' => ['admin']], function () {
 
-Route::get('/show-host-order/{OrderId}/{UserId}',[App\Http\Controllers\ShowHostOrderDetails::class,'ShowOrderDetail']);
+    Route::any('/qrcode-scanner',[App\Http\Controllers\QrcodeController::class, 'qrcodscannereview'])->name('qrcodescanner');
+
+    Route::get('/generate-qrcode/{OrderId}',[App\Http\Controllers\QrcodeController::class,'qrcode']);
+
+    Route::get('/show-host-order/{OrderId}/{UserId}',[App\Http\Controllers\ShowHostOrderDetails::class,'ShowOrderDetail']);
+});
+
+/* End Host Admin Middleware Route */
 
 
 

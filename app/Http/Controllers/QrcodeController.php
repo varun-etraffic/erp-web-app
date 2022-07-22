@@ -14,8 +14,8 @@ class QrcodeController extends Controller
         return view('host.qrcodescanner');
     }
 
-    public function qrcode($OrderId,$UserId){
+    public function qrcode($OrderId){
         $user_id = User::select('id')->where('email','user@gmail.com')->get();
-        return view('host.qrcode',compact('OrderId','UserId'));
+        return view('host.qrcode',compact('OrderId'));
     }
 }

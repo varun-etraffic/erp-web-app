@@ -8,6 +8,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Auth;
+use Session;
 
 class AdminController extends Controller
 {
@@ -15,11 +16,12 @@ class AdminController extends Controller
         $email = $request->email;
         $password = $request->password;
         $roleid = AdminRoles::select('id')->get();
-        $adminemailexist = Admin::where('email', $email)->first();
+        $adminemailexist = Admin::where('email', $email)->where('password', $password)->first();
         if(!empty($adminemailexist))
         {
             if(Admin::where('role_id', 1))
             {
+                session(['admin_id' => $adminemailexist->id]);
                 return redirect('/qrcode-scanner'); 
             }        
         }

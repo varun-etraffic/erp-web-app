@@ -16,20 +16,24 @@
                     @csrf
                     <div class="form-group">
                         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Username" required>
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                    @if ($errors->has('email'))
-                        <div class= "alert alert-danger admin_login_alert">
-                            {{ $errors->first('email') }}
-                        </div>
-                    @endif
+
                     <div class="form-group">
                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                    @if ($errors->has('password'))
-                        <div class= "alert alert-danger admin_login_alert">
-                            {{ $errors->first('password') }}
-                        </div>
-                    @endif
+                    
                     <button type="submit" class="btn btn-block submit-btn mt-5">Log In</button>
                 </form>
             </div>
